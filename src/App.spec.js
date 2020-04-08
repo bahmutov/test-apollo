@@ -29,4 +29,16 @@ describe('App', () => {
     mount(<App apolloClient={client} />)
     cy.get('[data-cy=book]').should('have.length', 2)
   })
+
+  it('handles errors', () => {
+    cy.stub(window, 'fetch')
+      .withArgs("https://test/")
+      .rejects(new Error('Nope'))
+
+    const client = new ApolloClient({
+      uri: "https://test/"
+    });
+    mount(<App apolloClient={client} />)
+    cy.contains('Error :(').should('be.visible')
+  })
 })

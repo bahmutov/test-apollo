@@ -9,7 +9,7 @@ const client = new ApolloClient({
   uri: "https://75183.sse.codesandbox.io/"
 });
 
-const GET_BOOKS = gql`
+export const GET_BOOKS = gql`
   {
     books {
       title
@@ -46,7 +46,7 @@ const ADD_BOOK = gql`
   }
 `;
 
-function Library() {
+export function Library() {
   let titleInput;
   let authorEmailInput;
   let authorNameInput;
