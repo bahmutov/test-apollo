@@ -121,7 +121,7 @@ function Library() {
         </thead>
         <tbody>
           {data.books.map((book, idx) => (
-            <tr key={idx}>
+            <tr data-cy="book" key={idx}>
               <td>{book.title}</td>
               <td>{book.author.name}</td>
               <td>{book.synopsis}</td>
@@ -133,9 +133,9 @@ function Library() {
   );
 }
 
-export default function App() {
+export default function App({ apolloClient }) {
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={apolloClient || client}>
       <div className="App">
         <h1>Welcome to my library!</h1>
         <Library />
