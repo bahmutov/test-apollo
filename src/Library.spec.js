@@ -5,7 +5,6 @@ import { MockedProvider } from '@apollo/react-testing'
 
 // mocking GraphQL requests using
 // https://www.apollographql.com/docs/react/development-testing/testing/#mockedprovider
-
 describe('Library', () => {
   beforeEach(() => {
     cy.fixture('books')
@@ -29,5 +28,27 @@ describe('Library', () => {
       </MockedProvider>
     )
     cy.get('[data-cy=book]').should('have.length', 2)
+  })
+
+  it('shows loading while making the query', function () {
+    // delays the response by 3 seconds
+    const mocks = [
+      {
+        request: {
+          query: GET_BOOKS
+        },
+        result: this.books,
+        delay: 3000
+      }
+    ]
+    mount(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Library />
+      </MockedProvider>
+    )
+
+    cy.contains('Loading ...').should('be.visible')
+    cy.get('[data-cy=book]').should('have.length', 2)
+    cy.contains('Loading ...').should('not.exist')
   })
 })
