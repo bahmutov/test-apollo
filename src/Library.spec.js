@@ -47,6 +47,8 @@ describe('Library', () => {
       </MockedProvider>
     )
 
+    // 😀 compare declarative testing vs promise waits in 
+    // https://www.apollographql.com/docs/react/development-testing/testing/#testing-final-state
     cy.contains('Loading ...').should('be.visible')
     cy.get('[data-cy=book]').should('have.length', 2)
     cy.contains('Loading ...').should('not.exist')
