@@ -21,5 +21,5 @@ Test | Description
 
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/
-[ci image]: https://github.com/bahmutov/test-apollog/workflows/ci/badge.svg?branch=master
-[ci url]: https://github.com/bahmutov/test-apollog/actions
+[ci image]: https://github.com/bahmutov/test-apollo/workflows/ci/badge.svg?branch=master
+[ci url]: https://github.com/bahmutov/test-apollo/actions
