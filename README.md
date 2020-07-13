@@ -1,4 +1,4 @@
-# test-apollo ![Cypress version](https://img.shields.io/badge/cypress-4.10.0-brightgreen) ![cypress-react-unit-test version](https://img.shields.io/badge/cypress--react--unit--test-4.9.0-brightgreen) [![renovate-app badge][renovate-badge]][renovate-app] [![ci status][ci image]][ci url]
+# test-apollo ![Cypress version](https://img.shields.io/badge/cypress-4.10.0-brightgreen) ![cypress-react-unit-test version](https://img.shields.io/badge/cypress--react--unit--test-4.10.0-brightgreen) [![renovate-app badge][renovate-badge]][renovate-app] [![ci status][ci image]][ci url]
 
 > Testing React Apollo demo using Cypress component testing
 
